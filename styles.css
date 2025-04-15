@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* Beautiful gradient */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 10px;
+}
+
+/* App Container */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Form Elements */
+input, select, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #8ec5fc;
+}
+
+button {
+  background: linear-gradient(to right, #d4145a, #fbb03b);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #f857a6, #ff5858);
+}
+
+/* Error Message */
+.error {
+  color: red;
+  display: none;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Receipt Section */
+.receipt-box {
+  width: 95%;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 3px solid #333;
+  background: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  color: #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.receipt-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.receipt-header h2 {
+  margin: 0;
+  color: #000;
+  font-size: 22px;
+}
+
+.receipt-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.receipt-box h3 {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.receipt-table td {
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.signature-section {
+  margin-top: 40px;
+  text-align: right;
+  padding-right: 30px;
+}
+
+.print-note {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  input, select, button {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .receipt-header h2 {
+    font-size: 18px;
+  }
+
+  .receipt-table td {
+    font-size: 14px;
+  }
+
+  .receipt-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .signature-section {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #billReceipt, #billReceipt * {
+    visibility: visible;
+  }
+
+  #billReceipt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  #billReceipt button {
+    display: none;
+  }
+}
